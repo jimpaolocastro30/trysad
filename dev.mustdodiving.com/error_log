@@ -1,0 +1,16 @@
+[16-Sep-2021 16:09:36 UTC] PHP Fatal error:  Uncaught Symfony\Component\Dotenv\Exception\PathException: Unable to read the "/home/vytk3mma662q/public_html/.env" environment file. in /home/vytk3mma662q/public_html/vendor/symfony/dotenv/Dotenv.php:510
+Stack trace:
+#0 /home/vytk3mma662q/public_html/vendor/symfony/dotenv/Dotenv.php(65): Symfony\Component\Dotenv\Dotenv->doLoad(false, Array)
+#1 /home/vytk3mma662q/public_html/vendor/symfony/dotenv/Dotenv.php(85): Symfony\Component\Dotenv\Dotenv->load('/home/vytk3mma6...')
+#2 /home/vytk3mma662q/public_html/config/bootstrap.php(17): Symfony\Component\Dotenv\Dotenv->loadEnv('/home/vytk3mma6...')
+#3 /home/vytk3mma662q/public_html/dev.mustdodiving.com/index.php(7): require('/home/vytk3mma6...')
+#4 {main}
+  thrown in /home/vytk3mma662q/public_html/vendor/symfony/dotenv/Dotenv.php on line 510
+[16-Sep-2021 16:09:36 UTC] PHP Fatal error:  Uncaught Symfony\Component\Dotenv\Exception\PathException: Unable to read the "/home/vytk3mma662q/public_html/.env" environment file. in /home/vytk3mma662q/public_html/vendor/symfony/dotenv/Dotenv.php:510
+Stack trace:
+#0 /home/vytk3mma662q/public_html/vendor/symfony/dotenv/Dotenv.php(65): Symfony\Component\Dotenv\Dotenv->doLoad(false, Array)
+#1 /home/vytk3mma662q/public_html/vendor/symfony/dotenv/Dotenv.php(85): Symfony\Component\Dotenv\Dotenv->load('/home/vytk3mma6...')
+#2 /home/vytk3mma662q/public_html/config/bootstrap.php(17): Symfony\Component\Dotenv\Dotenv->loadEnv('/home/vytk3mma6...')
+#3 /home/vytk3mma662q/public_html/dev.mustdodiving.com/index.php(7): require('/home/vytk3mma6...')
+#4 {main}
+  thrown in /home/vytk3mma662q/public_html/vendor/symfony/dotenv/Dotenv.php on line 510

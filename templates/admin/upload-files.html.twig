@@ -1,0 +1,31 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Must Do Diving - {{ controller_name }} {% endblock %}
+
+{% block body %}
+ 
+<div class="container mt-30">
+    
+    
+    {% for message in app.flashes('info') %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+    
+        <div class="container"> 
+            {{ form_start(uploadFiles) }}
+
+            <div class="row">
+            <input type="submit" name="btncreatepage" class="btn btn-primary mt-10 mr-10" value=" UPLOAD " style="display:none;" id="btnUploadImages">
+            {{ form_row(uploadFiles.button) }}
+            <a href="{{ path("upload_files") }}" class="btn btn-warning mt-10" id="btncancelupload" style="display: none;">CANCEL</a>
+            </div>    
+
+            <div class="mt-10 wrap-uploader row" id="uploader">
+            </div>
+            {{ form_end(uploadFiles) }}
+        </div> 
+    
+
+    
+</div>
+{% endblock %}

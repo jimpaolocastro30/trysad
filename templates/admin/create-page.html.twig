@@ -1,0 +1,250 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Must Do Diving - {{ controller_name }} {% endblock %}
+
+{% block stylesheets %}
+
+    {{ parent() }}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+{{form_start(frmpagelist) }}
+
+     
+    <div class="btn-inline mt-30">
+    {{ form_row(frmpagelist.publish) }} <a href="{{ path('create_page') }}" class="btn btn-success pull-left">Create New Page</a>
+    </div>
+
+    <div class="clearfix"></div> 
+ 
+
+     <div id="tabs" class="mt-30">
+        <ul>
+            <li><a href="#tabs-1">PAGE SETUP</a></li>
+            <li><a href="#tabs-2">MANAGE PHOTOS</a></li>
+        </ul>
+        <div id="tabs-1">
+            <div class="manage-section">
+                <div class="row">    
+                    <div class="col-md-4">{{ form_row(frmpagelist.page_name) }} </div>
+                    <div class="col-md-4">{{ form_row(frmpagelist.page_title) }} </div>
+                    <div class="col-md-4">{{ form_row(frmpagelist.page_description) }} </div>
+                </div>
+            </div>
+
+            <div class="manage-section">
+                <div class="row">
+                    <div class="col-md-2">{{ form_row(frmpagelist.topBar) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.topBarColor) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.topBarSize) }} </div>
+                </div>
+            </div>
+
+            <div class="manage-section">
+                <div class="row">
+                    <div class="col-md-4">{{ form_row(frmpagelist.navFont) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.navFontSize) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.navFontColor) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.navColor) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.mobileMenuBold) }} </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">{{ form_row(frmpagelist.default_nav_bar_size) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.leftAlign) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.menPosition) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.menuVertical) }} </div>
+                    <div class="col-md-4">{{ form_row(frmpagelist.mobileLogoMenuCentered) }} </div>
+                </div>
+            </div>
+
+            <div class="manage-section">
+                <div class="row">
+                     <div class="col-md-2">{{ form_row(frmpagelist.logoVersion) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.logoPositionVertical) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.logoPosition) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.logoLocation) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.logoTextColor) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.logoSize) }} </div>   
+                </div>
+            </div>
+
+            <div class="manage-section">
+                <div class="row">
+                     <div class="col-md-3">{{ form_row(frmpagelist.bgcolor) }} </div>
+                    <div class="col-md-3">{{ form_row(frmpagelist.colorBetween) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.sideColor) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.rsideColor) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.sidesOption) }} </div>
+                    
+                </div>
+            </div>
+
+             <div class="manage-section">
+                <div class="row">
+                     <div class="col-md-3">{{ form_row(frmpagelist.dofilters) }} </div>
+                    <div class="col-md-3">{{ form_row(frmpagelist.useicon) }} </div>
+                </div>
+            </div>
+
+            <div class="manage-section">
+                <div class="row">
+                     <div class="col-md-3">{{ form_row(frmpagelist.rowTopMargin) }} </div>
+                    <div class="col-md-3">{{ form_row(frmpagelist.topRowColor) }} </div>
+                </div>
+            </div>
+
+            <div class="manage-section">
+                <div class="row">
+                     <div class="col-md-3">{{ form_row(frmpagelist.rowLeftMargin) }} </div>
+                    <div class="col-md-3">{{ form_row(frmpagelist.LeftColor) }} </div>
+                </div>
+            </div>
+
+            <div class="manage-section">
+                <div class="row">
+                     <div class="col-md-3">{{ form_row(frmpagelist.rowRightMargin) }} </div>
+                    <div class="col-md-3">{{ form_row(frmpagelist.RightColor) }} </div>
+                </div>
+            </div>
+
+            <div class="manage-section">
+                <div class="row">
+                     <div class="col-md-4">{{ form_row(frmpagelist.fbPage) }} </div>
+                     <div class="col-md-4">{{ form_row(frmpagelist.twitterPage) }} </div>
+                     <div class="col-md-4">{{ form_row(frmpagelist.instaPage) }} </div>
+                </div>
+                <div class="row">
+                     <div class="col-md-4">{{ form_row(frmpagelist.ytPage) }} </div>
+                     <div class="col-md-4">{{ form_row(frmpagelist.pinPage) }} </div>
+                </div>
+
+                <div class="col-md-12 mt-20">    
+                <h5>Show / Hide Icons in header</h5>
+                </div>
+
+                <div class="row">
+                     <div class="col-md-2 pl-20">{{ form_row(frmpagelist.showFbOnTop) }} <i class="fa fa-facebook-square fa-2x"></i><br /><a href="#" class="link-primary">Change Icon</a></div>
+                     <div class="col-md-2">{{ form_row(frmpagelist.showTwitterOnTop) }} <i class="fa fa-twitter-square fa-2x"></i><br /><a href="#" class="link-primary">Change Icon</a></div>
+                     <div class="col-md-2">{{ form_row(frmpagelist.showInstaOnTop) }} <i class="fa fa-instagram fa-2x"></i><br /><a href="#" class="link-primary">Change Icon</a></div>
+                     <div class="col-md-2">{{ form_row(frmpagelist.showYtOnTop) }} <i class="fa fa-youtube-square fa-2x"></i><br /><a href="#" class="link-primary">Change Icon</a></div>
+                     <div class="col-md-2">{{ form_row(frmpagelist.showPinOnTop) }} <i class="fa fa-pinterest-square fa-2x"></i><br /><a href="#" class="link-primary">Change Icon</a></div>
+                </div> 
+
+                <div class="row">
+                     <div class="col-md-2">{{ form_row(frmpagelist.toggleSocialIcons) }} </div>
+                     <div class="col-md-2">{{ form_row(frmpagelist.socialShowIn) }} </div>
+                     <div class="col-md-2">{{ form_row(frmpagelist.socialSize) }} </div>
+                     <div class="col-md-3">{{ form_row(frmpagelist.socialLocation) }} </div>
+                     <div class="col-md-3">{{ form_row(frmpagelist.socialPosition) }} </div>
+                </div>   
+
+                
+
+            </div>
+
+            <div class="manage-section">
+
+                <div class="col-md-12 mt-20">    
+                <h5>Show / Hide Icons in footer</h5>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2 pl-20">{{ form_row(frmpagelist.showFbOnFoot) }} <i class="fa fa-facebook-square fa-2x"></i><br /><a href="#" class="link-primary">Change Icon</a></div>
+                     <div class="col-md-2">{{ form_row(frmpagelist.showTwitterOnFoot) }} <i class="fa fa-twitter-square fa-2x"></i><br /><a href="#" class="link-primary">Change Icon</a></div>
+                     <div class="col-md-2">{{ form_row(frmpagelist.showInstaOnFoot) }} <i class="fa fa-instagram fa-2x"></i><br /><a href="#" class="link-primary">Change Icon</a></div>
+                     <div class="col-md-2">{{ form_row(frmpagelist.showYtOnFoot) }} <i class="fa fa-youtube-square fa-2x"></i><br /><a href="#" class="link-primary">Change Icon</a></div>
+                     <div class="col-md-2">{{ form_row(frmpagelist.showPinOnFoot) }} <i class="fa fa-pinterest-square fa-2x"></i><br /><a href="#" class="link-primary">Change Icon</a></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2">{{ form_row(frmpagelist.footer_size) }} </div>
+                     <div class="col-md-2">{{ form_row(frmpagelist.footer_color) }} </div>
+                     <div class="col-md-2">{{ form_row(frmpagelist.footer_icon_size) }} </div>
+                     <div class="col-md-3">{{ form_row(frmpagelist.footer_social_pos) }} </div>
+                     <div class="col-md-3">{{ form_row(frmpagelist.footer_social_vert) }} </div>
+                </div>
+            
+            </div>
+
+        </div>
+
+
+        <div id="tabs-2">
+        
+            <h3>Header Section</h3>
+
+            <div class="manage-section">
+                <div class="row">    
+                    <div class="col-md-2">{{ form_row(frmpagelist.show_header) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.headerWidth) }} </div>
+                    <div class="col-md-2">{{ form_row(frmpagelist.headerHeight) }} </div>
+                </div>
+
+                <div class="pl-10">
+                    <div class="placeholderImg mt-2">
+                        <div class="row-controls">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-warning"> SELECT PHOTO</a>
+                                    <a href="#" class="btn btn-primary"> CROP PHOTO</a>
+                                </div>
+                        </div>
+                        <div class="bannerPhoto">
+                                <img src="" width="100%">
+                                {{ form_row(frmpagelist.photoid) }}                      
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="manage-section">
+            
+                    <div class="row">
+
+                            <div class="col-md-3">{{ form_row(frmpagelist.header_text) }}</div>
+                            <div class="col-md-3">{{ form_row(frmpagelist.sloganFont) }}</div>
+                            <div class="col-md-2">{{ form_row(frmpagelist.sloganPosition) }}</div>
+                            <div class="col-md-2">{{ form_row(frmpagelist.sloganColor) }}</div>
+                            <div class="col-md-2">{{ form_row(frmpagelist.slogansize) }}</div>
+                    
+                    </div>
+
+            </div>
+
+
+        
+        </div>
+
+    </div>
+
+{{form_end(frmpagelist) }}
+
+</div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $("#tabs").tabs({
+            beforeLoad: function (event, ui) {
+                ui.jqXHR.fail(function () {
+                    ui.panel.html(
+                        "Couldn't load this tab. We'll try to fix this as soon as possible. " +
+                        "If this wouldn't be a demo.");
+                });
+            }
+        }); 
+    </script>
+
+{% endblock %}

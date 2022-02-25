@@ -1,0 +1,31 @@
+<style type="text/css">
+	.modal{
+		width: 350px;
+        height: 200px;
+	}
+    .modal a.close-modal{
+        top: 12.5px;
+        right: 12.5px;  
+    }
+</style>
+
+        {% for message in app.flashes('info') %}
+                <div class="alert alert-success mt-30">{{ message }}</div>
+        {% endfor %}
+
+<div class="container">
+
+<h5>{{ controller_name }}</h5>
+<hr>
+{{ form_start(frmsubanimals) }}
+
+    {{form_row(frmsubanimals.subanimal) }}
+
+<hr>
+
+    {{ form_row(frmsubanimals.button) }}
+
+{{ form_end(frmsubanimals) }}
+
+
+</div>
